@@ -1,0 +1,16 @@
+﻿@model WebToDoApp.Models.TaskItem
+
+@{
+    ViewData["Title"] = "Task Details";
+}
+
+<h1>Task Details</h1>
+
+<div>
+    <h3>@Model.Name</h3>
+    <p>Due: @Model.DueDate.ToShortDateString()</p>
+    <p>Completed: @Model.IsComplete</p>
+    <p>Description: @Model.Description</p>
+</div>
+
+<a asp-controller="Tasks" asp-action="Index" class="btn btn-secondary">Back to List</a>
