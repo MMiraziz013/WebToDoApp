@@ -19,4 +19,15 @@ The Web To-Do App is a simple yet effective task management application built us
 
 ### Prerequisites
 - [.NET SDK](https://dotnet.microsoft.com/download) installed on your machine.
+- [SQLite](https://www.sqlite.org/download.html) installed to manage the database.
 - A web browser (e.g., Chrome, Firefox).
+
+### Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/MMiraziz013/WebToDoApp.git
+2. Navigate to the project directory
+   ```bash
+   cd WebToDoApp
+3. Restore NuGet Packages:
+   ```bash
