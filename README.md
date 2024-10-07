@@ -31,3 +31,21 @@ The Web To-Do App is a simple yet effective task management application built us
    cd WebToDoApp
 3. Restore NuGet Packages:
    ```bash
+   dotnet restore
+4. Run the application
+   ```bash
+   dotnet run
+
+## Accessing the Application
+Open your web browser and navigate to https://localhost:7191/ to access the To-Do List application.
+
+## Database
+The application uses SQLite for data storage. 
+The database file is created automatically when the application runs for the first time, storing all your tasks.
+You can manage the database schema and data using Entity Framework migrations.
+
+## Contribution
+Feel free to fork the repository, create a new branch, and submit a pull request if you wish to contribute to the project.
+
+## License
+This project is licensed under the MIT License. See the LICENSE file for more details.
