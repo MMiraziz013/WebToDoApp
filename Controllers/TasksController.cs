@@ -19,7 +19,7 @@ namespace WebToDoApp.Controllers
         // GET: /Tasks/Index
         public async Task<IActionResult> Index()
         {
-            return View(await _context.TaskItems.ToListAsync()); // Fetches all tasks from the database
+            return View(await _context.TaskItems.ToListAsync());
         }
 
         // GET: /Tasks/Create
@@ -37,8 +37,8 @@ namespace WebToDoApp.Controllers
             {
                 if (task.DueDate >= DateTime.Today)
                 {
-                    _context.Add(task);  // Adds the task to the database context
-                    await _context.SaveChangesAsync();  // Saves changes to the database
+                    _context.Add(task);
+                    await _context.SaveChangesAsync();
                     return RedirectToAction(nameof(Index));
                 }
                 else
@@ -52,7 +52,7 @@ namespace WebToDoApp.Controllers
         // GET: /Tasks/Edit/{id}
         public async Task<IActionResult> Edit(int id)
         {
-            var task = await _context.TaskItems.FindAsync(id);  // Find task by ID in the database
+            var task = await _context.TaskItems.FindAsync(id);
             if (task == null)
             {
                 return NotFound();
@@ -67,7 +67,7 @@ namespace WebToDoApp.Controllers
         {
             if (ModelState.IsValid)
             {
-                var task = await _context.TaskItems.FindAsync(id);  // Find task by ID in the database
+                var task = await _context.TaskItems.FindAsync(id);
                 if (task != null)
                 {
                     task.Name = updatedTask.Name;
@@ -81,7 +81,7 @@ namespace WebToDoApp.Controllers
                     {
                         ModelState.AddModelError("DueDate", "New date is in the past");
                     }
-                    await _context.SaveChangesAsync();  // Save changes to the database
+                    await _context.SaveChangesAsync();
                     return RedirectToAction(nameof(Index));
                 }
                 return NotFound();
@@ -92,7 +92,7 @@ namespace WebToDoApp.Controllers
         // GET: /Tasks/Delete/{id}
         public async Task<IActionResult> Delete(int id)
         {
-            var task = await _context.TaskItems.FindAsync(id);  // Find task by ID in the database
+            var task = await _context.TaskItems.FindAsync(id);
             if (task == null)
             {
                 return NotFound();
@@ -105,11 +105,11 @@ namespace WebToDoApp.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var task = await _context.TaskItems.FindAsync(id);  // Find task by ID in the database
+            var task = await _context.TaskItems.FindAsync(id);
             if (task != null)
             {
-                _context.TaskItems.Remove(task);  // Removes task from the database
-                await _context.SaveChangesAsync();  // Save changes to the database
+                _context.TaskItems.Remove(task);
+                await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
             return View(task);
@@ -118,7 +118,7 @@ namespace WebToDoApp.Controllers
         // GET: /Tasks/Details/{id}
         public async Task<IActionResult> Details(int id)
         {
-            var task = await _context.TaskItems.FindAsync(id);  // Find task by ID in the database
+            var task = await _context.TaskItems.FindAsync(id);
             if (task == null)
             {
                 return NotFound();
@@ -129,11 +129,11 @@ namespace WebToDoApp.Controllers
         // POST: /Tasks/MarkComplete/{id}
         public async Task<IActionResult> MarkComplete(int id)
         {
-            var task = await _context.TaskItems.FindAsync(id);  // Find task by ID in the database
+            var task = await _context.TaskItems.FindAsync(id);
             if (task != null)
             {
-                task.IsComplete = true;  // Mark task as complete
-                await _context.SaveChangesAsync();  // Save changes to the database
+                task.IsComplete = true;
+                await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
             return NotFound();
