@@ -27,3 +27,9 @@ body {
     max-width: 100%; /* Maximum width */
     box-sizing: content-box; /* Ensure padding doesn't affect width */
 }
+
+.nav-link:hover {
+    color: black !important;
+    transition-duration: 0.5s;
+    background-color: whitesmoke;
+}
