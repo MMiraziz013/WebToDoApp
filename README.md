@@ -15,6 +15,8 @@ The Web To-Do App is a simple yet effective task management application built us
 - **SQLite**: A lightweight database engine used for data storage.
 - **HTML/CSS**: For designing the user interface.
 
+![image](https://github.com/user-attachments/assets/008fa1eb-0a4b-430e-a6c0-a8c6f47a9ac3)
+
 ## Getting Started
 
 ### Prerequisites
